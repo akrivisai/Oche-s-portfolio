@@ -545,7 +545,7 @@ export const ABOUT = {
 export const CONTACT = {
   lede:
     "I'm currently exploring roles where I can build the operational and AI infrastructure of globally distributed HR teams.",
-  email: 'ocheameh42@gmail.com',
+  email: 'amoche42@gmail.com',
   linkedin: 'linkedin.com/in/am-oche',
   linkedinUrl: 'https://linkedin.com/in/am-oche',
   location: 'Kaduna, Nigeria · Open to Anywhere',
