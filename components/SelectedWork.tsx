@@ -94,7 +94,7 @@ export function SelectedWork() {
             Systems I have <span className="italic">shipped.</span>
           </h2>
           <p className="lede">
-            Three production platforms built inside Babban Gona to solve real
+            Four production platforms built inside Babban Gona to solve real
             operational bottlenecks across recruitment, training, and approvals.
           </p>
         </Reveal>
