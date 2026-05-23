@@ -23,7 +23,7 @@ export function LifecycleOps() {
         
         <Reveal>
           <p style={{ maxWidth: '880px', marginBottom: '48px', fontSize: '16px', lineHeight: 1.65, color: 'var(--text-muted)' }}>
-            Built as a design exercise for a Lifecycle Operations Lead role at Remote.com — a globally distributed Employer-of-Record platform operating in 80+ countries. This artifact translates publicly stated principles from Remote's AI ethics doctrine, async-first operating philosophy, and Compliance Watchtower product into an operational layer for resignations, conversions, and offboarding. The thinking is mine; the alignment is to their published philosophy.
+            Built as a design exercise for a Lifecycle Operations Lead role at Remote.com — a globally distributed Employer-of-Record platform operating in 80+ countries. This artifact translates publicly stated principles from Remote&apos;s AI ethics doctrine, async-first operating philosophy, and Compliance Watchtower product into an operational layer for resignations, conversions, and offboarding. The thinking is mine; the alignment is to their published philosophy.
           </p>
         </Reveal>
 
@@ -35,7 +35,7 @@ export function LifecycleOps() {
               <div style={{ color: 'var(--accent)', marginBottom: '16px' }}><FileText size={24} /></div>
               <h3 style={{ fontFamily: 'var(--serif)', fontSize: '22px', fontWeight: 420, marginBottom: '12px', letterSpacing: '-0.01em' }}>Design Document</h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '14.5px', lineHeight: 1.6, marginBottom: '24px', flex: 1 }}>
-                An 8,500-word operational design covering architecture, workflow maps for resignations / conversions / offboarding, a five-country compliance matrix, dashboard design, lessons-learned framework, AI use cases anchored to Remote's published five principles, and a phased rollout plan.
+                An 8,500-word operational design covering architecture, workflow maps for resignations / conversions / offboarding, a five-country compliance matrix, dashboard design, lessons-learned framework, AI use cases anchored to Remote&apos;s published five principles, and a phased rollout plan.
               </p>
               <a href={DESIGN_DOC_URL} target="_blank" rel="noopener noreferrer" className="project-expand" style={{ alignSelf: 'flex-start', textDecoration: 'none' }}>
                 Read the document &rarr;

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { EASE } from '@/lib/content';
 
 type RevealProps = {
@@ -9,21 +9,23 @@ type RevealProps = {
   className?: string;
   as?: 'div' | 'section' | 'header' | 'article';
   delay?: number;
+  style?: CSSProperties;
 };
 
-export function Reveal({ children, className, as = 'div', delay = 0 }: RevealProps) {
+export function Reveal({ children, className, as = 'div', delay = 0, style }: RevealProps) {
   const reduce = useReducedMotion();
 
   const MotionTag = motion[as];
 
   if (reduce) {
     const Tag = as;
-    return <Tag className={className}>{children}</Tag>;
+    return <Tag className={className} style={style}>{children}</Tag>;
   }
 
   return (
     <MotionTag
       className={className}
+      style={style}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
