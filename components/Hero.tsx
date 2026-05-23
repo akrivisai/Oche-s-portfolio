@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { ArrowRight, Download } from 'lucide-react';
 import { HERO, EASE } from '@/lib/content';
 
-const STAGGER_DELAYS = [200, 350, 500, 650, 800, 950]; // ms
+const STAGGER_DELAYS = [200, 350, 500, 650, 800, 950, 1100]; // ms
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -114,6 +114,12 @@ export function Hero() {
           <motion.div className="status-pill" {...item(5)}>
             <span className="status-dot" aria-hidden="true" />
             {HERO.statusPill}
+          </motion.div>
+
+          <motion.div style={{ marginTop: '16px' }} {...item(6)}>
+            <a href="#lifecycle-ops" style={{ fontStyle: 'italic', color: 'var(--text-muted)', fontSize: '14.5px', transition: 'color 200ms ease' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--text)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-muted)'}>
+              See the featured Lifecycle Operations Console below &darr;
+            </a>
           </motion.div>
         </div>
 

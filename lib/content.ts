@@ -144,7 +144,7 @@ export const PROJECTS: Project[] = [
         type: 'prose',
         heading: 'Outcome',
         body:
-          'Introduced structured, data-driven behavioural screening to the organization from scratch, replacing subjective evaluations with a single auditable system. In active production use across recruitment cohorts. A recent active cycle tracked 68 uploaded candidates, 52 registered and matched, 128 distinct assignments, 92 submissions, 71.9% completion, and 8 high-risk candidates successfully auto-flagged for review before hiring decisions were made.',
+          'Introduced structured, data-driven behavioural screening to the organization from scratch, replacing subjective evaluations with a single auditable system. In active production use across recruitment cohorts. First-week production metrics: 135 candidates uploaded, 95 registered and matched, 262 distinct assignments, 174 submissions, 66.4% completion rate, and 10 high-risk candidates auto-flagged for review before hiring decisions were made.',
       },
     ],
   },
@@ -308,7 +308,7 @@ export const PROJECTS: Project[] = [
         type: 'prose',
         heading: 'What I Built',
         body:
-          "A centralized, spreadsheet-driven approval system with Apps Script automation behind it. The tool auto-routes approvals based on hub and unit, enforces timestamping on every action, and acts as the single source of truth for all replacement requests. Every stakeholder — managers, analysts, HR — is consistently included in the flow with no manual cc'ing required.",
+          "A centralized, spreadsheet-driven approval system with Apps Script automation behind it. The tool auto-routes approvals based on hub and unit, enforces timestamping on every action, and acts as the single source of truth for all replacement requests. Every stakeholder — managers, analysts, HR — is consistently included in the flow with no manual cc'ing required. The workflow also includes an integrated asset-reconciliation tracker: a managed column where hub managers confirm that the departing employee's assets (laptop, mobile device, security tokens) have been returned, before the system advances the replacement request toward final HR clearance.",
       },
     ],
     rightBlocks: [
@@ -555,6 +555,7 @@ export const FOOTER = '© 2026 Ameh Matthew Oche · Designed and built with care
 
 export const NAV_LINKS = [
   { href: '#work', label: 'Work' },
+  { href: '#lifecycle-ops', label: 'Featured' },
   { href: '#recognition', label: 'Recognition' },
   { href: '#about', label: 'About' },
   { href: '#contact', label: 'Contact' },

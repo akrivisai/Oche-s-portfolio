@@ -2,6 +2,7 @@ import { Nav } from '@/components/Nav';
 import { Hero } from '@/components/Hero';
 import { Impact } from '@/components/Impact';
 import { SelectedWork } from '@/components/SelectedWork';
+import { LifecycleOps } from '@/components/LifecycleOps';
 import { Capabilities } from '@/components/Capabilities';
 import { Recognition } from '@/components/Recognition';
 import { About } from '@/components/About';
@@ -16,6 +17,7 @@ export default function Page() {
         <Hero />
         <Impact />
         <SelectedWork />
+        <LifecycleOps />
         <Capabilities />
         <Recognition />
         <About />
