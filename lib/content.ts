@@ -229,12 +229,6 @@ export const VENTURES: Venture[] = [
       'Scaled to 11,000 concurrent exam sessions before free-tier infrastructure limits forced a re-architecture.',
     ],
   },
-  {
-    name: 'Office, Decoded',
-    role: 'Founder',
-    summary: 'A paid workplace-clarity web app.',
-    points: [],
-  },
 ];
 
 export type Capability = {
