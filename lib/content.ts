@@ -23,7 +23,7 @@ export const HERO = {
     accent: '— I turn messy operating problems into systems, frameworks and products that people actually use.',
   },
   lede:
-    'Associate Product Manager at Babban Gona, MBA, and founder of two products: Akrivis Academia and Office, Decoded.',
+    'Associate Product Manager at Babban Gona, MBA, and founder of Akrivis Academia.',
   portraitTag: {
     location: 'Kaduna',
     accent: 'UTC+1',
@@ -402,11 +402,11 @@ export const ABOUT = {
     React.createElement(
       React.Fragment,
       null,
-      'I also build my own products: ',
+      'Outside my day job I founded ',
       React.createElement('b', null, 'Akrivis Academia'),
-      ' and ',
+      ', and I built ',
       React.createElement('b', null, 'Office, Decoded'),
-      '.'
+      ', a workplace-clarity web app, for a client.'
     ),
     React.createElement(
       React.Fragment,
@@ -420,7 +420,7 @@ export const ABOUT = {
 
 export const CONTACT = {
   lede:
-    'For product, strategy and operations conversations, or to talk about Akrivis Academia or Office, Decoded, email is the fastest way to reach me.',
+    'For product, strategy and operations conversations, or to talk about Akrivis Academia, email is the fastest way to reach me.',
   availability: 'Open to select remote and contract work.',
   email: 'ocheameh42@gmail.com',
   linkedin: 'linkedin.com/in/am-oche',
