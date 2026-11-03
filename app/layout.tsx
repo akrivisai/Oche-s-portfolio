@@ -19,17 +19,17 @@ const inter = Inter({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://amehoche.dev';
 
 export const metadata: Metadata = {
-  title: 'Ameh Matthew Oche — People Operations & AI Systems',
+  title: 'Ameh Matthew Oche — Strategy · Operations · Product',
   description:
-    'Analyst, People & Culture at Babban Gona. Building the workflows, automations, and AI tooling that scale modern HR.',
+    'I turn messy operating problems into systems, frameworks and products that people actually use. Associate Product Manager, Enterprise Systems, at Babban Gona.',
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Ameh Matthew Oche — People Operations & AI Systems',
+    title: 'Ameh Matthew Oche — Strategy · Operations · Product',
     description:
-      'Analyst, People & Culture at Babban Gona. Building the workflows, automations, and AI tooling that scale modern HR.',
+      'I turn messy operating problems into systems, frameworks and products that people actually use. Associate Product Manager, Enterprise Systems, at Babban Gona.',
     type: 'website',
     url: siteUrl,
     images: [

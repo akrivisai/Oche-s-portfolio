@@ -45,6 +45,7 @@ function Counter({ target }: { target: number }) {
 }
 
 export function Impact() {
+  if (IMPACT.length === 0) return null;
   return (
     <section className="impact" aria-label="Impact metrics">
       <div className="container">

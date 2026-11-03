@@ -100,25 +100,26 @@ export function Hero() {
               See selected work
               <ArrowRight strokeWidth={2} aria-hidden="true" />
             </a>
-            <a
-              href={HERO.cv}
-              className="btn btn-ghost"
-              download
-              aria-label="Download CV"
-            >
-              Download CV
-              <Download strokeWidth={2} aria-hidden="true" />
-            </a>
+            {HERO.cv ? (
+              <a
+                href={HERO.cv}
+                className="btn btn-ghost"
+                download
+                aria-label="Download CV"
+              >
+                Download CV
+                <Download strokeWidth={2} aria-hidden="true" />
+              </a>
+            ) : (
+              <a href="#contact" className="btn btn-ghost">
+                Get in touch
+              </a>
+            )}
           </motion.div>
 
-          <motion.div className="status-pill" {...item(5)}>
-            <span className="status-dot" aria-hidden="true" />
-            {HERO.statusPill}
-          </motion.div>
-
-          <motion.div style={{ marginTop: '16px' }} {...item(6)}>
-            <a href="#lifecycle-ops" style={{ fontStyle: 'italic', color: 'var(--text-muted)', fontSize: '14.5px', transition: 'color 200ms ease' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--text)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-muted)'}>
-              See the featured Lifecycle Operations Console below &darr;
+          <motion.div style={{ marginTop: '16px' }} {...item(5)}>
+            <a href="#design-study" style={{ fontStyle: 'italic', color: 'var(--text-muted)', fontSize: '14.5px', transition: 'color 200ms ease' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--text)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-muted)'}>
+              See the featured design study below &darr;
             </a>
           </motion.div>
         </div>

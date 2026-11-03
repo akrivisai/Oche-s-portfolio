@@ -12,6 +12,7 @@ export function Contact() {
             Let&apos;s <span className="italic">talk.</span>
           </h2>
           <p className="lede">{CONTACT.lede}</p>
+          <p className="contact-availability">{CONTACT.availability}</p>
         </Reveal>
         <Reveal>
           <div style={{ display: 'flex', justifyContent: 'center' }}>

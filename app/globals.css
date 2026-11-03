@@ -765,3 +765,11 @@ footer.foot {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Contact: quiet availability line */
+.contact-availability {
+  margin-top: 14px;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-faint);
+}

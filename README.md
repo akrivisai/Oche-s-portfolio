@@ -37,13 +37,13 @@ vercel deploy --prod
 ```
 
 Optionally set `NEXT_PUBLIC_SITE_URL` in your Vercel project settings so the
-canonical and Open Graph URLs point at your production domain.
+canonical and Open Graph links point at your production domain.
 
 ## Where to change things
 
 | Want to change… | Edit |
 | --- | --- |
-| The CV | Replace `public/assets/Ameh_Matthew_Oche_CV.pdf` (keep the filename) |
+| The CV | Add a PDF to `public/assets/` and set `HERO.cv` in `lib/content.ts` (the Download CV button shows only when it is set) |
 | Copy (hero, projects, recognitions, about, contact, footer) | `lib/content.ts` |
 | Theme colors / design tokens | `app/globals.css` (`:root` and `:root[data-theme="light"]`) |
 | Section layout / which components show | `app/page.tsx` |

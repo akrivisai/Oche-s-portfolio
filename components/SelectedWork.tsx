@@ -89,13 +89,13 @@ export function SelectedWork() {
     <section className="block" id="work">
       <div className="container">
         <Reveal as="header" className="section-head">
-          <div className="eyebrow">Selected Work</div>
+          <div className="eyebrow">Case studies</div>
           <h2>
-            Systems I have <span className="italic">shipped.</span>
+            Selected <span className="italic">work.</span>
           </h2>
           <p className="lede">
-            Four production platforms built inside Babban Gona to solve real
-            operational bottlenecks across recruitment, training, and approvals.
+            Four operating problems, and how I turned each into a system people
+            use: the problem, what I did, and the outcome.
           </p>
         </Reveal>
 
