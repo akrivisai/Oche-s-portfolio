@@ -20,7 +20,8 @@ export function MultiColour({ text, className }: { text: string; className?: str
 /* The MediScripts wordmark, redrawn as vector: "Medi" + a heart-topped S
  * drawn as one continuous line + "cripts". Variants follow the printed uses:
  * brand (navy + red heart, as on the cards), gold (as on the box),
- * white (for dark backgrounds, gold heart).
+ * white (for dark backgrounds, gold heart), navy (one colour, as printed
+ * on the cards).
  */
 export function SHeart({ className }: { className?: string }) {
   return (
@@ -42,7 +43,7 @@ export function Wordmark({
   variant = 'brand',
 }: {
   className?: string;
-  variant?: 'brand' | 'gold' | 'white';
+  variant?: 'brand' | 'gold' | 'white' | 'navy';
 }) {
   return (
     <span className={`logo logo-${variant}${className ? ` ${className}` : ''}`} role="img" aria-label={site.name}>
@@ -80,6 +81,21 @@ export function Glyph({ kind, className }: { kind: Card['glyph']; className?: st
           <rect x="54" y="56" width="12" height="16" rx="4" fill="#F5B800" stroke={OUT} strokeWidth="3" />
           <path d="M46 92h28" stroke={OUT} strokeWidth="3" />
         </g>
+      </svg>
+    );
+  }
+  if (kind === 'bulb') {
+    return (
+      <svg {...common}>
+        <g stroke="#F5B800" strokeWidth="3.5" strokeLinecap="round">
+          <path d="M60 6v9M28 18l6 7M92 18l-6 7M16 46h9M95 46h9" />
+        </g>
+        <path d="M60 22c-19 0-32 14-32 31 0 12 7 19 12 25 3 4 4 8 4 12h32c0-4 1-8 4-12 5-6 12-13 12-25 0-17-13-31-32-31z" fill="#F7C948" stroke={OUT} strokeWidth="3.5" />
+        <path d="M72 26c9 5 16 15 16 27 0 12-7 19-12 25-3 4-4 8-4 12h-6c0-4 1-8 4-12 5-6 9-13 9-25 0-12-3-21-7-27z" fill="#E3A800" />
+        <path d="M60 22c-19 0-32 14-32 31 0 12 7 19 12 25 3 4 4 8 4 12h32c0-4 1-8 4-12 5-6 12-13 12-25 0-17-13-31-32-31z" fill="none" stroke={OUT} strokeWidth="3.5" />
+        <path d="M52 88l4-24 4 8 4-8 4 24" fill="none" stroke="#E5484D" strokeWidth="3" strokeLinejoin="round" />
+        <rect x="44" y="90" width="32" height="20" rx="4" fill="#2F6FE0" stroke={OUT} strokeWidth="3.5" />
+        <path d="M44 97h32M44 103h32" stroke={OUT} strokeWidth="2.5" />
       </svg>
     );
   }
@@ -147,7 +163,7 @@ export function CardFace({
       role="img"
       aria-label={`MediScripts card: ${card.object}, ${card.ref} (placeholder artwork)`}
     >
-      <Wordmark className="card-wordmark" />
+      <Wordmark variant="navy" className="card-wordmark" />
       <Glyph kind={card.glyph} className="card-glyph" />
       <MultiColour text={card.object.toUpperCase()} className="card-name" />
       {label ? <PlaceholderTag>Placeholder art</PlaceholderTag> : null}
@@ -156,21 +172,21 @@ export function CardFace({
 }
 
 /* ---------- Card back: the verse side ---------- */
-export function CardBack({ card, className }: { card: Card; className?: string }) {
+export function CardBack({ card, className, priority = false }: { card: Card; className?: string; priority?: boolean }) {
   if (card.cardBackImage) {
     return (
       <div className={`card card-real${className ? ` ${className}` : ''}`}>
-        <Image src={card.cardBackImage} alt={`${card.ref}: ${card.verse}`} fill sizes="(max-width: 640px) 70vw, 320px" />
+        <Image src={card.cardBackImage} alt={`${card.ref}: ${card.verse}`} fill sizes="(max-width: 640px) 75vw, 340px" priority={priority} />
       </div>
     );
   }
   return (
     <div className={`card card-mock card-back${className ? ` ${className}` : ''}`}>
-      <Wordmark className="card-wordmark" />
+      <Wordmark variant="navy" className="card-wordmark" />
       <Glyph kind={card.glyph} className="card-back-glyph" />
       <p className="card-back-verse">{card.verse}</p>
       <p className="card-back-ref">
-        {card.ref.toUpperCase()} · {site.translation.abbr}
+        {card.refShort} · {site.translation.abbr}
       </p>
     </div>
   );

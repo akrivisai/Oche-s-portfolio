@@ -113,6 +113,7 @@ p { margin: 0; }
 .logo-s { width: 0.62em; height: 1.06em; margin: 0 0 0 -0.01em; color: #D0303C; overflow: visible; align-self: baseline; transform: translateY(0.05em); }
 .logo-gold { color: var(--gold-light); }
 .logo-gold .logo-s { color: var(--gold-light); }
+.logo-navy, .logo-navy .logo-s { color: #1E3F7A; }
 .logo-white { color: #fff; }
 .logo-white .logo-s { color: var(--gold-light); }
 .top-logo { font-size: 23px; }
@@ -165,6 +166,7 @@ p { margin: 0; }
   background: var(--paper); overflow: hidden;
 }
 .card-real img { object-fit: cover; }
+.card-real { background: var(--card-blue); }
 .card-mock {
   border: 5px solid var(--card-blue);
   display: flex; flex-direction: column; align-items: center; justify-content: space-between;

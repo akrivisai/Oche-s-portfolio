@@ -72,8 +72,8 @@ export function Gallery() {
               onClick={() => setFlipped((f) => !f)}
               aria-label={flipped ? 'Show the picture side' : 'Flip to see the verse'}
             >
-              <span className="flip-face flip-front"><CardFace card={current} sizes="(max-width: 640px) 75vw, 340px" label={false} /></span>
-              <span className="flip-face flip-back"><CardBack card={current} /></span>
+              <span className="flip-face flip-front"><CardFace card={current} sizes="(max-width: 640px) 75vw, 340px" label={false} priority /></span>
+              <span className="flip-face flip-back"><CardBack card={current} priority /></span>
             </button>
             <p className="lightbox-hint">{flipped ? 'Tap to see the picture' : 'Tap the card to see the verse'}</p>
             <button type="button" className="btn btn-ghost lightbox-close" onClick={() => setOpen(null)}>

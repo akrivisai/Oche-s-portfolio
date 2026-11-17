@@ -37,7 +37,7 @@ function Icon({ name }: { name: 'see' | 'say' | 'spot' | 'hunt' | 'flip' | 'frid
 }
 
 export default function Page() {
-  const [torch] = cards;
+  const [first] = cards;
   const ig = socialUrl('instagram');
   const tt = socialUrl('tiktok');
   const mail = emailUrl();
@@ -274,9 +274,9 @@ export default function Page() {
             <div className="why-grid">
               <article className="why-tile">
                 <div className="why-vis why-vis-pic" aria-hidden>
-                  <CardFace card={torch} className="why-mini" label={false} sizes="80px" />
+                  <CardFace card={first} className="why-mini" label={false} sizes="80px" />
                   <span className="why-vs">vs</span>
-                  <span className="why-words">Your word is a lamp…</span>
+                  <span className="why-words">{first.verse.split(' ').slice(0, 5).join(' ')}…</span>
                 </div>
                 <h3>Pictures stick</h3>
                 <p>People remember pictures far better than words alone. Psychologists call it the picture superiority effect.</p>
@@ -294,7 +294,7 @@ export default function Page() {
               </article>
               <article className="why-tile">
                 <div className="why-vis why-vis-home" aria-hidden>
-                  {['Torch', 'Honey', 'Mirror', 'Clock', 'Chair'].map((o) => <span key={o}>{o}</span>)}
+                  {['Light bulb', 'Honey', 'Mirror', 'Torch', 'Clock'].map((o) => <span key={o}>{o}</span>)}
                 </div>
                 <h3>Home becomes the reminder</h3>
                 <p>Each picture is an object your child sees every day, so the home keeps prompting the memory. Every sighting is a free review.</p>

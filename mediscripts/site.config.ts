@@ -132,21 +132,49 @@ export type Card = {
   id: string;
   object: string;
   ref: string;
+  refShort: string; // as printed on the card back, e.g. 'PSA. 119:103'
   verse: string;
   cardImage: string; // '/images/card-lamp.png' — flat export from the card generator
   cardBackImage: string; // set if the card has a printed back
   realImage: string; // '/images/real-lamp-living-room.jpg' — the real object in a modern home
   realAlt: string;
   childLine: string; // what a child says when they spot it
-  glyph: 'torch' | 'honey' | 'mirror';
+  glyph: 'torch' | 'honey' | 'mirror' | 'bulb';
 };
 
 // Real pairings from the Word Pack. Add more as card files arrive.
 export const cards: Card[] = [
   {
+    id: 'light-bulb',
+    object: 'Light bulb',
+    ref: 'Luke 24:45',
+    refShort: 'LUK. 24:45',
+    verse: 'Then he opened their minds to understand the Scriptures.',
+    cardImage: '/images/card-light-bulb.jpg', // photo of the printed card
+    cardBackImage: '/images/card-light-bulb-back.jpg', // photo of the printed card
+    realImage: '',
+    realAlt: 'A light bulb glowing above a dining table in a bright, modern home',
+    childLine: 'Mummy, a light bulb!',
+    glyph: 'bulb',
+  },
+  {
+    id: 'honey',
+    object: 'Honey',
+    ref: 'Psalm 119:103',
+    refShort: 'PSA. 119:103',
+    verse: 'How sweet your words taste to me; they are sweeter than honey.',
+    cardImage: '',
+    cardBackImage: '/images/card-honey-back.jpg', // photo of the printed card
+    realImage: '',
+    realAlt: 'A jar of honey on a bright breakfast table',
+    childLine: 'Daddy, honey!',
+    glyph: 'honey',
+  },
+  {
     id: 'torch',
     object: 'Torch',
     ref: 'Psalm 119:105',
+    refShort: 'PSA. 119:105',
     verse: 'Your word is a lamp to guide my feet and a light for my path.',
     cardImage: '',
     cardBackImage: '',
@@ -156,21 +184,10 @@ export const cards: Card[] = [
     glyph: 'torch',
   },
   {
-    id: 'honey',
-    object: 'Honey',
-    ref: 'Psalm 119:103',
-    verse: 'How sweet your words taste to me; they are sweeter than honey.',
-    cardImage: '',
-    cardBackImage: '',
-    realImage: '',
-    realAlt: 'A jar of honey on a bright breakfast table',
-    childLine: 'Daddy, honey!',
-    glyph: 'honey',
-  },
-  {
     id: 'mirror',
     object: 'Mirror',
     ref: 'James 1:22',
+    refShort: 'JAS. 1:22',
     verse: 'But don’t just listen to God’s word. You must do what it says.',
     cardImage: '',
     cardBackImage: '',
