@@ -145,6 +145,19 @@ export type Card = {
 // Real pairings from the Word Pack. Add more as card files arrive.
 export const cards: Card[] = [
   {
+    id: 'torch',
+    object: 'Torch',
+    ref: 'Psalm 119:105',
+    refShort: 'PSA. 119:105',
+    verse: 'Your word is a lamp to guide my feet and a light for my path.',
+    cardImage: '/images/card-torch.jpg', // photo of the printed card
+    cardBackImage: '/images/card-torch-back.jpg', // photo of the printed card
+    realImage: '',
+    realAlt: 'A torch on a shelf in a modern, well-kept living room',
+    childLine: 'Mummy, a torch!',
+    glyph: 'torch',
+  },
+  {
     id: 'light-bulb',
     object: 'Light bulb',
     ref: 'Luke 24:45',
@@ -169,19 +182,6 @@ export const cards: Card[] = [
     realAlt: 'A jar of honey on a bright breakfast table',
     childLine: 'Daddy, honey!',
     glyph: 'honey',
-  },
-  {
-    id: 'torch',
-    object: 'Torch',
-    ref: 'Psalm 119:105',
-    refShort: 'PSA. 119:105',
-    verse: 'Your word is a lamp to guide my feet and a light for my path.',
-    cardImage: '',
-    cardBackImage: '',
-    realImage: '',
-    realAlt: 'A torch on a shelf in a modern, well-kept living room',
-    childLine: 'Mummy, a torch!',
-    glyph: 'torch',
   },
   {
     id: 'mirror',
