@@ -35,7 +35,7 @@ export const site = {
     // 'whatsapp' (default) | 'link' (Paystack / Flutterwave / Shopify URL)
     mode: 'whatsapp' as 'whatsapp' | 'link',
     // International format, digits only, no "+" — e.g. 2348012345678
-    whatsappNumber: '[WHATSAPP_NUMBER]',
+    whatsappNumber: '2349165485794',
     // Used when mode is 'link'. {qty} is replaced with the chosen quantity if present.
     paymentUrl: '',
     // Quantity choices on the order buttons. The last one means "this many or more".
@@ -50,7 +50,7 @@ export const site = {
 
   /* ---------- Contact ---------- */
   contact: {
-    whatsappDisplay: '[WHATSAPP_NUMBER]',
+    whatsappDisplay: '0916 548 5794',
     instagram: '[INSTAGRAM]', // handle without @
     tiktok: '[TIKTOK]', // handle without @
     email: '[EMAIL]',
@@ -111,7 +111,7 @@ export const site = {
  * paths here. Anything left as '' shows a clearly labelled placeholder.
  */
 export const images = {
-  heroBoxAndCards: '', // '/images/hero-box-and-cards.jpg'
+  heroBoxAndCards: '', // '/images/hero-box-and-cards.jpg' — a real photo of the box + fanned cards, used instead of the pack render when set
   familyPlaying: '', // '/images/family-playing.jpg'
   handHoldingCard: '', // '/images/hand-holding-card.jpg'
   boxDetailFoil: '', // '/images/box-detail-foil.jpg'
@@ -121,8 +121,10 @@ export const images = {
   // Real footage of the printed cards (trimmed from the founder's phone video).
   realCardsVideo: '/video/real-cards.mp4',
   realCardsPoster: '/images/real-cards-poster.jpg',
-  // TODO: drop in the real logo (SVG preferred) and set the path; the text wordmark is used until then.
-  logo: '',
+  // The wordmark is drawn in code (components/Visuals.tsx → Wordmark), so it stays sharp.
+  // Front of the Word Pack box (background removed).
+  packFront: '/images/word-pack-box.png',
+  packFrontSize: { width: 746, height: 1297 },
 };
 
 /* ---------- Cards ---------- */
@@ -205,7 +207,7 @@ export function orderUrl(qty = 1, plus = false): string {
     return checkout.paymentUrl.replace('{qty}', String(qty));
   }
   const count = plus ? `${qty} or more` : String(qty);
-  const text = `Hi MediScripts, I'd like to order the ${product.name} (${product.edition.replace('Ages ', '')}). Quantity: ${count}.`;
+  const text = `Hi MediScripts, I'd like to order ${product.name.replace(/^The /, 'the ')} (${product.edition}). Quantity: ${count}.`;
   const number = isPlaceholder(checkout.whatsappNumber) ? '' : checkout.whatsappNumber;
   return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
 }

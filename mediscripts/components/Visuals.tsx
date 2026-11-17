@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { CSSProperties, ReactNode } from 'react';
-import { site, type Card } from '@/site.config';
+import { images, site, type Card } from '@/site.config';
 
 /* Object-name lettering in the card's multicolour style. */
 const LETTER_COLOURS = ['#E5484D', '#F28C28', '#E3A800', '#2EA66B', '#2F6FE0', '#8E4EC6'];
@@ -17,14 +17,38 @@ export function MultiColour({ text, className }: { text: string; className?: str
   );
 }
 
-export function Wordmark({ className, gold = false }: { className?: string; gold?: boolean }) {
+/* The MediScripts wordmark, redrawn as vector: "Medi" + a heart-topped S
+ * drawn as one continuous line + "cripts". Variants follow the printed uses:
+ * brand (navy + red heart, as on the cards), gold (as on the box),
+ * white (for dark backgrounds, gold heart).
+ */
+export function SHeart({ className }: { className?: string }) {
   return (
-    <span className={`wordmark${gold ? ' wordmark-gold' : ''}${className ? ` ${className}` : ''}`}>
-      Medi
-      <svg className="wordmark-heart" viewBox="0 0 24 22" aria-hidden>
-        <path d="M12 21s-9-5.6-9-12A5 5 0 0 1 12 6a5 5 0 0 1 9 3c0 6.4-9 12-9 12z" fill="none" stroke="currentColor" strokeWidth="2.6" />
-      </svg>
-      Scripts
+    <svg className={className} viewBox="0 0 70 120" aria-hidden focusable="false">
+      <path
+        d="M12 104 C15 112 23 117 33 118 C46 119 59 113 59 101 C59 90 47 84 36 76 C20 64 5 51 7 32 C9 15 30 13 35 28 C40 13 61 15 63 32 C65 51 50 64 36 76"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="7.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function Wordmark({
+  className,
+  variant = 'brand',
+}: {
+  className?: string;
+  variant?: 'brand' | 'gold' | 'white';
+}) {
+  return (
+    <span className={`logo logo-${variant}${className ? ` ${className}` : ''}`} role="img" aria-label={site.name}>
+      <span aria-hidden>Medi</span>
+      <SHeart className="logo-s" />
+      <span aria-hidden>cripts</span>
     </span>
   );
 }
@@ -191,33 +215,32 @@ export function Photo({
   );
 }
 
-/* ---------- The box, drawn from the packaging spec ---------- */
-export function ProductMock({ cards, priority = false }: { cards: Card[]; priority?: boolean }) {
-  const [hero, ...rest] = cards;
+/* ---------- The pack ---------- */
+export function PackShot({ priority = false, className }: { priority?: boolean; className?: string }) {
+  if (images.heroBoxAndCards) {
+    return (
+      <Photo
+        src={images.heroBoxAndCards}
+        alt="The MediScripts Word Pack box with illustrated cards fanned out"
+        file="hero-box-and-cards.jpg"
+        className={`hero-photo${className ? ` ${className}` : ''}`}
+        sizes="(max-width: 900px) 100vw, 560px"
+        priority={priority}
+      />
+    );
+  }
   return (
-    <div className="pmock" role="img" aria-label="The MediScripts Word Pack: a navy and gold window box with illustrated cards fanned out beside it">
-      <div className="pmock-fan">
-        {rest.slice(0, 2).map((c, i) => (
-          <CardFace key={c.id} card={c} className={`pmock-card pmock-card-${i + 1}`} label={false} />
-        ))}
-      </div>
-      <div className="pmock-box">
-        <div className="pmock-box-top">
-          <Wordmark gold className="pmock-logo" />
-          <span className="pmock-sub">The Word Pack</span>
-        </div>
-        <div className="pmock-window">
-          <CardFace card={hero} className="pmock-hero-card" priority={priority} label={false} />
-        </div>
-        <div className="pmock-box-foot">
-          <span>Ages 6–9</span>
-          <span>32 cards</span>
-        </div>
-        <span className="pmock-seal" aria-hidden>
-          <svg viewBox="0 0 40 40"><path d="M20 2l4 5 6-2 1 6 6 2-2 6 5 4-5 4 2 6-6 2-1 6-6-2-4 5-4-5-6 2-1-6-6-2 2-6-5-4 5-4-2-6 6-2 1-6 6 2z" fill="currentColor" /><text x="20" y="23.5" textAnchor="middle" fontSize="8" fontWeight="700" fill="#142251">MS</text></svg>
-        </span>
-      </div>
-      <PlaceholderTag>Illustration · product photo coming</PlaceholderTag>
+    <div className={`pack${className ? ` ${className}` : ''}`}>
+      <span className="pack-glow" aria-hidden />
+      <Image
+        src={images.packFront}
+        alt="The MediScripts Word Pack flashcards box: a bright blue and yellow box with a golden crown and two smiling children"
+        width={images.packFrontSize.width}
+        height={images.packFrontSize.height}
+        sizes="(max-width: 900px) 62vw, 380px"
+        priority={priority}
+        className="pack-img"
+      />
     </div>
   );
 }

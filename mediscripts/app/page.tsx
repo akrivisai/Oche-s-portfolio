@@ -4,7 +4,7 @@ import { Gallery } from '@/components/Gallery';
 import { LeadForm } from '@/components/LeadForm';
 import { OrderBox, StickyOrder } from '@/components/Order';
 import { RealVideo } from '@/components/RealVideo';
-import { CardFace, Photo, ProductMock, Wordmark } from '@/components/Visuals';
+import { CardFace, PackShot, Photo, Wordmark } from '@/components/Visuals';
 import {
   cards,
   emailUrl,
@@ -67,11 +67,7 @@ export default function Page() {
       <header className="top">
         <div className="wrap top-inner">
           <a href="#hero" className="brand" aria-label={`${site.name} home`}>
-            {images.logo ? (
-              <Image src={images.logo} alt={site.name} width={150} height={32} priority />
-            ) : (
-              <Wordmark />
-            )}
+            <Wordmark className="top-logo" />
             <span className="brand-by">by {site.maker}</span>
           </a>
           <nav className="top-nav" aria-label="Page sections">
@@ -101,18 +97,7 @@ export default function Page() {
               <a href="#how" className="link-arrow">See how it works ↓</a>
             </div>
             <div className="hero-visual">
-              {images.heroBoxAndCards ? (
-                <Photo
-                  src={images.heroBoxAndCards}
-                  alt="The MediScripts Word Pack: navy and gold window box with illustrated cards fanned out"
-                  file="hero-box-and-cards.jpg"
-                  className="hero-photo"
-                  sizes="(max-width: 900px) 100vw, 560px"
-                  priority
-                />
-              ) : (
-                <ProductMock cards={cards} priority />
-              )}
+              <PackShot priority />
             </div>
           </div>
           <div className="wrap">
@@ -120,7 +105,7 @@ export default function Page() {
               <li><b>{site.product.cards}</b> illustrated cards</li>
               <li><b>1</b> verse per card ({site.translation.abbr})</li>
               <li><b>Guide card</b> with games</li>
-              <li><b>Gift-ready</b> navy &amp; gold box</li>
+              <li><b>Gift-ready</b> box</li>
             </ul>
           </div>
         </section>
@@ -197,7 +182,7 @@ export default function Page() {
               <ul className="inside-list">
                 <li><b>{site.product.cards} illustrated cards.</b> Each one has its own object, picture and verse.</li>
                 <li><b>A guide card.</b> How to use the pack, plus games for ages 6–9, closing with Psalm 119:11.</li>
-                <li><b>A navy and gold window box</b> with gold foil on the logo and a gold seal that marks every genuine pack.</li>
+                <li><b>A bright, sturdy flashcard box</b> that keeps every card together and is ready to give as a gift.</li>
                 <li><b>Durable, gloss-finished cards</b> with rounded corners, made for little hands.</li>
               </ul>
               <div className="scale">
@@ -230,7 +215,7 @@ export default function Page() {
                 <Photo src={images.handHoldingCard} alt="A child’s hand holding a MediScripts card" file="hand-holding-card.jpg" sizes="(max-width: 700px) 100vw, 50vw" />
               ) : null}
               {images.boxDetailFoil ? (
-                <Photo src={images.boxDetailFoil} alt="Close-up of the gold foil logo and gold seal on the MediScripts box" file="box-detail-foil.jpg" sizes="(max-width: 700px) 100vw, 50vw" />
+                <Photo src={images.boxDetailFoil} alt="Close-up detail of the MediScripts Word Pack box" file="box-detail-foil.jpg" sizes="(max-width: 700px) 100vw, 50vw" />
               ) : null}
             </div>
           ) : null}
@@ -472,7 +457,7 @@ export default function Page() {
               </details>
               <details>
                 <summary>Does it make a good gift?</summary>
-                <p>Yes. It comes in a navy and gold window box with gold foil and a seal, so it’s ready to give for birthdays, child dedications and Christmas.</p>
+                <p>Yes. It comes in a bright, sturdy box that’s ready to give for birthdays, child dedications and Christmas.</p>
               </details>
             </div>
           </div>
@@ -482,11 +467,7 @@ export default function Page() {
         <section className="final" id="order">
           <div className="wrap final-grid">
             <div className="final-visual">
-              {images.heroBoxAndCards ? (
-                <Photo src={images.heroBoxAndCards} alt="The MediScripts Word Pack box with cards" file="hero-box-and-cards.jpg" className="hero-photo" sizes="(max-width: 900px) 100vw, 520px" />
-              ) : (
-                <ProductMock cards={cards} />
-              )}
+              <PackShot className="pack-final" />
             </div>
             <div>
               <p className="eyebrow eyebrow-gold">The Word Pack · {site.product.edition}</p>
@@ -501,11 +482,11 @@ export default function Page() {
       <footer className="foot">
         <div className="wrap foot-inner">
           <div>
-            <Wordmark gold />
+            <Wordmark variant="white" className="foot-logo" />
             <p>by {site.maker}</p>
           </div>
           <ul className="foot-links">
-            <li><a href={whatsappUrl('Hi MediScripts!')} target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href={whatsappUrl('Hi MediScripts!')} target="_blank" rel="noopener">WhatsApp: {site.contact.whatsappDisplay}</a></li>
             {ig ? <li><a href={ig} target="_blank" rel="noopener">Instagram</a></li> : null}
             {tt ? <li><a href={tt} target="_blank" rel="noopener">TikTok</a></li> : null}
             {mail ? <li><a href={mail}>Email</a></li> : null}
